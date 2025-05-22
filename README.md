@@ -45,7 +45,7 @@ This project is an automated testing suite designed to validate the functionalit
 - Run the following command to execute tests **(only one test type at a time)**:
 
 ```bash
-# Run UI tests 
+# Run Web tests 
 mvn clean test -Dtest=com.petsgolden.runner.UITest
 
 # Run API tests 
