@@ -73,7 +73,7 @@ Test coverage is collected using **JaCoCo** and visually represented in the repo
 
 - Clone the repository
 - Install Java and Maven on your PC
-- Run the following command to execute tests **(only one test type at a time)**:
+- Use the following commands to run the tests:
 
 ```bash
 # Run Web tests 
@@ -81,3 +81,6 @@ mvn clean test -Dtest=com.petsgolden.runner.UITest
 
 # Run API tests 
 mvn clean test -Dtest=com.petsgolden.runner.APITest
+
+# Run all tests 
+mvn clean test
