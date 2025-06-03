@@ -38,7 +38,7 @@ This project is an automated testing suite designed to validate the functionalit
 - Avoidance of personal data in test cases (no real user names)
 - Tests structured to run sequentially or independently for CI/CD integration
 
-### Code Coverage Report
+### Code Coverage 
 
 Test coverage is collected using **JaCoCo** and visually represented in the reports below.
 
