@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">  
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.petsgolden.automation</groupId>
@@ -15,13 +15,12 @@
     </properties>
 
     <dependencies>
-
+        <!-- WebDriverManager untuk otomatis download driver browser -->
         <dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>5.7.0</version>
-</dependency>
-
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.7.0</version>
+        </dependency>
 
         <!-- Selenium Java -->
         <dependency>
@@ -30,14 +29,14 @@
             <version>4.10.0</version>
         </dependency>
 
-        <!-- Cucumber Java -->
+        <!-- Cucumber Java (step definitions) -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.12.1</version>
         </dependency>
 
-        <!-- Cucumber JUnit -->
+        <!-- Cucumber JUnit (runner) -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -45,21 +44,53 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit -->
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
+         
         </dependency>
 
-        <!-- Rest Assured for API testing -->
+        <!-- Rest Assured (untuk test di main source) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.3.0</version>
-            <scope>test</scope>
+         
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin untuk menjalankan test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+            </plugin>
+
+            <!-- Plugin untuk generate code coverage report -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
