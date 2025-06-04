@@ -8,7 +8,7 @@ This project is an automated testing suite designed to validate the functionalit
 
 ### Technology Stack
 
-- Java 17+
+- Java 21+
 - Selenium WebDriver
 - Cucumber JVM
 - Spring Boot (optional, for API testing)
